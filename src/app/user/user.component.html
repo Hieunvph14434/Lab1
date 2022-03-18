@@ -1,0 +1,81 @@
+<p class="login-title">List User!</p>
+
+<div class="container mb-3">
+    <input type="text" name="key" (input)="onSearch($event)" placeholder="Search...">
+</div>
+
+<div class="container">
+    <h1 class="text-center">Add user</h1>
+    <form action="">
+        <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" [value]="newUser.name" class="form-control" id="name" (input)="onChange($event, 'name')">
+        </div>
+        <div class="mb-3">
+            <label for="age">Age</label>
+            <input type="number" [value]="newUser.age" class="form-control" id="age" (input)="onChange($event, 'age')">
+        </div>
+        <div class="mb-3">
+            <label for="phone">Phone</label>
+            <input type="text" [value]="newUser.phone" class="form-control" id="phone" (input)="onChange($event, 'phone')">
+        </div>
+        <div class="mb-3">
+            <label for="avatar">Avatar</label>
+            <input type="text" [value]="newUser.avatar" class="form-control" id="avatar" (input)="onChange($event, 'avatar')">
+        </div>
+        <div class="mb-3">
+            <button type="button" class="btn btn-primary" [disabled]="!validate(newUser)" (click)="onSubmit()">Save</button>
+        </div>
+    </form>
+</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Avatar</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>1</td>
+                <td>hieu</td>
+                <td>22</td>
+                <td>0389957717</td>
+                <td><img height="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu9mZ4b-IgMRXcNLaMTKh7JqH_hVloGN4qsg&usqp=CAU" alt=""></td>
+                <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>hieu1</td>
+                <td>23</td>
+                <td>0389957717</td>
+                <td><img height="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzyrkzPTNXJknVyLF1WBBb91CMCWeLnWa2Sw&usqp=CAU" alt=""></td>
+                <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>hieu2</td>
+                <td>25</td>
+                <td>0389957717</td>
+                <td><img height="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvliPxKxXKCENDvno4aj6TLfoavUh4-LMFNg&usqp=CAU" alt=""></td>
+                <td><button class="btn btn-danger">Delete</button></td>
+            </tr> -->
+            <tr *ngFor="let user of usersFilter">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.phone}}</td>
+                <!-- <td><img height="100" src="{{user.avatar}}" alt=""></td> -->
+                <td><img height="100" [src]="user.avatar" alt=""></td>
+                <td>
+                    <button class="btn btn-success" (click)="edit(user)">Edit</button> &nbsp;
+                    <button class="btn btn-danger" (click)="remove(user.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
