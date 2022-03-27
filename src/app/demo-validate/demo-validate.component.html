@@ -1,12 +1,13 @@
 <p>demo-validate works!</p>
 <div class="container">
     <div class="row">
-        <form [formGroup]="portfolioForm" (ngSubmit)="onSubmit()">
+        <form #demo="ngForm" [formGroup]="portfolioForm" (ngSubmit)="onSubmit(demo.value)">
             <div class="form-group">
-                <input type="text" formControlName="name" placeholder="Name" class="form-control">
+                <input type="text" formControlName="name" placeholder="Name" class="form-control"> {{name?.errors |json}}
                 <div *ngIf="name?.invalid && (name?.touched || name?.dirty)">
                     <p class="text-danger" *ngIf="name?.errors?.['required']">Hãy nhập name</p>
-                    <p class="text-danger" *ngIf="name?.errors?.['email']">Hãy nhập name1</p>
+                    <p class="text-danger" *ngIf="name?.errors?.['minlength']">Hãy nhập name1</p>
+                    <p class="text-danger" *ngIf="name?.errors?.['email']">Hãy nhập name2</p>
                 </div>
             </div>
             <div class="form-group">

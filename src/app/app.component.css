@@ -1,0 +1,34 @@
+.head {
+    position: fixed;
+    min-width: 84.3%;
+    top: 0;
+    left: 245px;
+    background-color: white;
+}
+
+.aside {
+    position: fixed;
+    height: 725px;
+    background-color: #343a40;
+}
+
+.content {
+    margin: 55px 0 0 253px;
+    height: fit-content;
+    padding: 0px;
+}
+
+.bg-light {
+    height: 1000px;
+}
+
+.main {
+    padding: 20px;
+}
+
+.foot {
+    position: relative;
+    left: 280px;
+    padding: 15px 0 25px 0;
+    bottom: -10px;
+}

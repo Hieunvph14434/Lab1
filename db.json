@@ -1,0 +1,39 @@
+{
+  "students": [
+    {
+      "name": "hieu1",
+      "class": "11111",
+      "id": 1
+    },
+    {
+      "name": "hieunv22222",
+      "class": "we16304",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "hieunv3",
+      "class": "we16304"
+    },
+    {
+      "id": 4,
+      "name": "hieunv4",
+      "class": "we16304"
+    },
+    {
+      "name": "hieunv15",
+      "class": "we16304",
+      "id": 5
+    },
+    {
+      "name": "ạckkscal",
+      "class": "1155",
+      "id": 6
+    },
+    {
+      "name": "test1",
+      "class": "1111",
+      "id": 7
+    }
+  ]
+}

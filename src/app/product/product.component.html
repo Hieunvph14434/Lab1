@@ -8,18 +8,22 @@
             <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)">
                 <div class="mb-3">
                     <label for="name">Tên sản phẩm</label>
-                    <input type="text" name="name" id="name" [(ngModel)]="newProduct.name" class="form-control">
+                    <input type="text" name="name" id="name" [(ngModel)]="newProduct.name" class="form-control" required #valiName="ngModel">
+                    <div *ngIf="productForm.form.dirty || productForm.form.touched">
+                        <p *ngIf="valiName.errors?.['required']">Name không được trống</p>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="mota">Mô tả</label>
-                    <input type="text" name="mota" id="mota" [(ngModel)]="newProduct.mota" class="form-control">
+                    <input type="text" name="mota" id="mota" [(ngModel)]="newProduct.mota" class="form-control" required #valiMota="ngModel">
                 </div>
                 <div class="mb-3">
                     <label for="gia">Giá</label>
-                    <input type="number" name="gia" id="gia" [(ngModel)]="newProduct.gia" class="form-control">
+                    <input type="number" name="gia" id="gia" [(ngModel)]="newProduct.gia" class="form-control" required #valiGia="ngModel">
                 </div>
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-primary" [disabled]="!validate(newProduct)">Save</button>
+                    <!-- <button type="submit" class="btn btn-primary" [disabled]="!validate(newProduct)">Save</button> -->
+                    <button type="submit" class="btn btn-primary" [disabled]="productForm.form.invalid">Save</button>
                 </div>
             </form>
         </div>
@@ -35,6 +39,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of fillter">
+                        <td>{{item.id}}</td>
                         <td>{{item.name}}</td>
                         <td>{{item.mota}}</td>
                         <td>{{item.gia}}</td>

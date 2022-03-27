@@ -1,0 +1,25 @@
+<p>student-form works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form #student="ngForm" [formGroup]="studentValue" (ngSubmit)="onSubmit(student.value)">
+                <div class="mb-3">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="studentValue1.name" name="name" formControlName="name">
+                    <div *ngIf="name?.invalid && (name?.touched || name?.dirty)">
+                        <p class="text-danger" *ngIf="name?.errors?.['required']">Hãy nhập name</p>
+                        <p class="text-danger" *ngIf="name?.errors?.['minlength']">Tên phải nhiều hơn 5 ký tự</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="">Class</label>
+                    <input type="text" class="form-control" [(ngModel)]="studentValue1.class" name="class" formControlName="class">
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

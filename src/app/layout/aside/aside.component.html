@@ -1,0 +1,28 @@
+<!-- <div id="list-example" class="">
+    <a class="" routerLink="/login">Login</a>
+    <a class="" routerLink="/product">Product</a>
+    <a class="" routerLink="/user">User</a>
+    <a class="" routerLink="/students">Student</a>
+    <a class="" routerLink="/demo">Demo</a>
+</div> -->
+<div style="color: white; padding: 20px; font-size: 25px;">
+    DASHBOARD
+</div>
+
+<ul class="nav nav-link nav-pills">
+    <li class="nav-item">
+        <a [routerLink]="['/login']" class="nav-link active" aria-current="page">Login</a>
+    </li>
+    <li class="nav-item">
+        <a [routerLink]="['/user']" class="nav-link">User</a>
+    </li>
+    <li class="nav-item">
+        <a [routerLink]="['/product']" class="nav-link">Product</a>
+    </li>
+    <li class="nav-item">
+        <a [routerLink]="['/students']" class="nav-link">Student</a>
+    </li>
+    <li class="nav-item">
+        <a [routerLink]="['/demo']" class="nav-link">Demo</a>
+    </li>
+</ul>

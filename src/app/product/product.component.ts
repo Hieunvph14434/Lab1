@@ -14,18 +14,21 @@ export class ProductComponent implements OnInit {
 
   products = [
     {
-      name : "1",
-      mota:"1",
+      id:1,
+      name : "sp1",
+      mota:"5",
       gia:5
     },
     {
-      name : "2",
-      mota:"1",
+      id:2,
+      name : "sp2",
+      mota:"75",
       gia:5
     },
     {
-      name : "3",
-      mota:"1",
+      id:3,
+      name : "sp3",
+      mota:"22",
       gia:5
     }
   ];
@@ -33,6 +36,7 @@ export class ProductComponent implements OnInit {
   fillter = this.products;
 
   newProduct = {
+    id:0,
     name : "",
     mota:"",
     gia:0
@@ -47,15 +51,17 @@ export class ProductComponent implements OnInit {
 
     if(this.isEdit){
       for (let i = 0; i < this.products.length; i++) {
-        if(this.products[i].name === this.newProduct.name){
+        if(this.products[i].id === this.newProduct.id){
           this.products[i] = this.newProduct;
         }
         this.isEdit = false;
       }
     }else {
-      this.products.push(key);
+      this.newProduct.id = this.products.length + 1;
+      this.products.push(this.newProduct);
     }
     this.newProduct = {
+      id:0,
       name : "",
       mota:"",
       gia:0

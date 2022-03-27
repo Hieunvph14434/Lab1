@@ -1,5 +1,21 @@
-<p>App work!</p>
-<app-demo-validate></app-demo-validate>
-<app-login></app-login>
-<app-user></app-user>
-<app-product></app-product>
+<!-- <p>App work!</p> -->
+<div class="row col-10">
+</div>
+<div class="row">
+    <div class="col-2 aside position-fixed">
+        <app-aside></app-aside>
+    </div>
+    <div class="col-10 content">
+        <div class="head">
+            <app-header></app-header>
+        </div>
+        <div class="bg-light">
+            <div class="main">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <app-footer></app-footer>
+    </div>
+</div>
