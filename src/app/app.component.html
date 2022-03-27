@@ -1,21 +1,23 @@
 <!-- <p>App work!</p> -->
-<div class="row col-10">
-</div>
-<div class="row">
-    <div class="col-2 aside position-fixed">
-        <app-aside></app-aside>
+<div class="container-fluid">
+    <div class="row col-10">
     </div>
-    <div class="col-10 content">
-        <div class="head">
-            <app-header></app-header>
+    <div class="row">
+        <div class="col-2 aside position-fixed">
+            <app-aside></app-aside>
         </div>
-        <div class="bg-light">
-            <div class="main">
-                <router-outlet></router-outlet>
+        <div class="col-10 content">
+            <div class="head">
+                <app-header></app-header>
+            </div>
+            <div class="bg-light">
+                <div class="main">
+                    <router-outlet></router-outlet>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="foot">
-        <app-footer></app-footer>
+        <div class="foot">
+            <app-footer></app-footer>
+        </div>
     </div>
 </div>
