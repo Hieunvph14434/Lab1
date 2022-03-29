@@ -19,6 +19,7 @@
                 <td>{{item.status == 0 ? "In-active":"Active"}}</td>
                 <td>
                     <a class="btn btn-danger" (click)="remove(item.id)">Delete</a>
+                    <a routerLink="/posts/form/{{item.id}}" class="btn btn-success">Edit</a>
                 </td>
             </tr>
         </tbody>
