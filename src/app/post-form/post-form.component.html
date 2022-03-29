@@ -1,0 +1,29 @@
+<p>post-form works!</p>
+<div class="container">
+    <p>{{postForm.value | json}}</p>
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit(postForm.value)">
+        <div class="mb-3">
+            <label for="">Title</label>
+            <input type="text" class="form-control" formControlName="title" id="">
+            <div *ngIf="err['title'].invalid && (err['title'].touched || err['title'].dirty)">
+                <p class="text-danger" *ngIf="err['title'].errors?.['required']">Title không được trống</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="">Content</label>
+            <textarea class="form-control" formControlName="content" id=""></textarea>
+            <div *ngIf="err['content'].invalid && (err['content'].touched || err['content'].dirty)">
+                <p class="text-danger" *ngIf="err['content'].errors?.['required']">Content không được trống</p>
+                <p class="text-danger" *ngIf="err['content'].errors?.['minlength']">Content ít nhất 6 ký tự</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="">Status:</label>&nbsp;
+            <input type="radio" value="0" formControlName="status" id="">&nbsp;In-active &nbsp;
+            <input type="radio" value="1" formControlName="status" id="">&nbsp;Active
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>

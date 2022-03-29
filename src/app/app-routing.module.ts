@@ -1,3 +1,6 @@
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { PostFormComponent } from './post-form/post-form.component';
+import { PostComponent } from './post/post.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { StudentComponent } from './student/student.component';
@@ -46,6 +49,22 @@ const routes: Routes = [
   {
     path:'demo',
     component:DemoValidateComponent
+  },
+  {
+    path:'posts',
+    component:PostComponent
+  },
+  {
+    path:'posts/form',
+    component:PostFormComponent
+  },
+  {
+    path:'posts/form/:id',
+    component:PostFormComponent
+  },
+  {
+    path:'posts/:id',
+    component:PostDetailComponent
   },
   {
     path:'students/:id',

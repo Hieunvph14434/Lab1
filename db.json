@@ -35,5 +35,19 @@
       "class": "1111",
       "id": 7
     }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "hello",
+      "content": "xin chao",
+      "status": "0"
+    },
+    {
+      "title": "test 1",
+      "content": "test 1",
+      "status": "1",
+      "id": 2
+    }
   ]
 }

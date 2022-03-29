@@ -1,3 +1,4 @@
+import { PostService } from './service/post.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -19,6 +20,10 @@ import { StudentService } from './service/student.service';
 import { HeaderComponent } from './layout/header/header.component';
 import { AsideComponent } from './layout/aside/aside.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { PostComponent } from './post/post.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { PostFormComponent } from './post-form/post-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +38,9 @@ import { FooterComponent } from './layout/footer/footer.component';
     HeaderComponent,
     AsideComponent,
     FooterComponent,
+    PostComponent,
+    PostDetailComponent,
+    PostFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,9 +48,10 @@ import { FooterComponent } from './layout/footer/footer.component';
     NgbModule,
     FormsModule, // đưa vào để các component con có thể sử dụng
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
-  providers: [StudentService],
+  providers: [StudentService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

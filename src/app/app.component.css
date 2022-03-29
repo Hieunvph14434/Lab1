@@ -3,12 +3,14 @@
     min-width: 84.3%;
     top: 0;
     left: 252.5px;
+    z-index: 1;
     background-color: white;
 }
 
 .aside {
     position: fixed;
     height: 1200px;
+    z-index: 1;
     background-color: #343a40;
 }
 
