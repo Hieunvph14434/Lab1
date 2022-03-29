@@ -16,7 +16,7 @@
                 <td>{{item.id}}</td>
                 <td>{{item.title}}</td>
                 <td>{{item.content}}</td>
-                <td>{{item.status}}</td>
+                <td>{{item.status == 0 ? "In-active":"Active"}}</td>
                 <td>
                     <a class="btn btn-danger" (click)="remove(item.id)">Delete</a>
                 </td>
